@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float groundDistance = 0.25f;
     [SerializeField] private Transform feetPos;
     [SerializeField] private float jumpTime = 0.3f;
-    [SerializeField] private float crouchHeight = 0.5f;
+    [SerializeField] private float crouchHeight = 0.9f;
 
     private bool isGrounded = false;
     private bool isJumping = false;
@@ -48,6 +48,14 @@ public class PlayerMovement : MonoBehaviour
 
         if (isGrounded && Input.GetButton("Crouch")) {
             graphics.localScale = new Vector3(graphics.localScale.x, crouchHeight, graphics.localScale.z);
+
+            if (isJumping) {
+                graphics.localScale = new Vector3(graphics.localScale.x, crouchHeight * 2, graphics.localScale.z);
+            }
+        }
+
+        if (Input.GetButtonUp("Crouch")) {
+            graphics.localScale = new Vector3(graphics.localScale.x, crouchHeight * 2, graphics.localScale.z);
         }
 
         #endregion
