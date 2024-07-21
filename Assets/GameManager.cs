@@ -20,12 +20,17 @@ public class GameManager : MonoBehaviour
         if (isPlaying) {
             currentScore += Time.deltaTime;
         }
+
+        if (Input.GetKeyDown("k")) {
+            isPlaying = true;
+        }
     }
 
     public void GameOver() {
         currentScore = 0;
+        isPlaying = false;
     }
-    public int PrettyScore() {
+    public string PrettyScore() {
         return Mathf.RoundToInt(currentScore).ToString();
     }
 }
