@@ -3,14 +3,11 @@ using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
-    #region Singleton
 
     public static GameManager Instance;
     private void Awake() {
         if (Instance == null) Instance = this;
     }
-
-    #endregion
 
     public float currentScore = 0f;
     public Data data;
@@ -21,6 +18,7 @@ public class GameManager : MonoBehaviour
     private void Start() {
         data = new Data();
     }
+
     private void Update() {
         if (isPlaying) {
             currentScore += Time.deltaTime;
@@ -40,7 +38,8 @@ public class GameManager : MonoBehaviour
         }
         isPlaying = false;
     }
-    public string PrettyScore() {
-        return Mathf.RoundToInt(currentScore).ToString();
+
+    public string Readable(float score) {
+        return Mathf.RoundToInt(score).ToString();
     }
 }
