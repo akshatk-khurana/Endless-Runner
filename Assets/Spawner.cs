@@ -4,7 +4,7 @@ public class Spawner : MonoBehaviour
 {
     [SerializeField] private GameObject[] obstaclePrefabs;
     public float obstacleSpawnTime = 2f;
-    public float obstacleSpeed = 1f;
+    public float obstacleSpeed = 2f;
     private float timeUntilObstacleSpawn;
 
     private void Update() {

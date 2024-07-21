@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public float currentScore= 0f;
     public bool isPlaying = false;
     public UnityEvent onPlay = new UnityEvent();
+    public UnityEvent onGameOver = new UnityEvent();
     private void Update() {
         if (isPlaying) {
             currentScore += Time.deltaTime;
@@ -30,6 +31,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void GameOver() {
+        onGameOver.Invoke();
         currentScore = 0;
         isPlaying = false;
     }
