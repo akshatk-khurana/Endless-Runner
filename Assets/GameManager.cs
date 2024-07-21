@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,14 +17,16 @@ public class GameManager : MonoBehaviour
 
     public float currentScore= 0f;
     public bool isPlaying = false;
+    public UnityEvent onPlay = new UnityEvent();
     private void Update() {
         if (isPlaying) {
             currentScore += Time.deltaTime;
         }
+    }
 
-        if (Input.GetKeyDown("k")) {
-            isPlaying = true;
-        }
+    public void StartGame() {
+        onPlay.Invoke();
+        isPlaying = true;
     }
 
     public void GameOver() {
