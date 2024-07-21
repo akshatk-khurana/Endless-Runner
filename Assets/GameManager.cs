@@ -16,7 +16,12 @@ public class GameManager : MonoBehaviour
     public UnityEvent onGameOver = new UnityEvent();
 
     private void Start() {
-        data = new Data();
+        string loadedData = Save.LoadData("save");
+        if (loadedData != null) {
+            data = JsonUtility.FromJson<Data>(loadedData);
+        } else {
+            data = new Data();
+        }
     }
 
     private void Update() {
@@ -32,11 +37,14 @@ public class GameManager : MonoBehaviour
     }
 
     public void GameOver() {
-        onGameOver.Invoke();
         if (data.highScore < currentScore) {
             data.highScore = currentScore;
+
+            string jsonified = JsonUtility.ToJson(data);
+            Save.SaveData("save", jsonified);
         }
-        isPlaying = false;
+        isPlaying = false; 
+        onGameOver.Invoke();
     }
 
     public string Readable(float score) {

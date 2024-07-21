@@ -4,6 +4,7 @@ using TMPro;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI scoreUI;
+    [SerializeField] private GameObject scoreScreen;
     [SerializeField] private GameObject startMenuUI;
     [SerializeField] private GameObject gameOverUI;
 
@@ -11,17 +12,20 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI gameOverHighScoreUI;
     GameManager gm;
+
     private void Start() {
         gm = GameManager.Instance;
         gm.onGameOver.AddListener(ActivateGameOverUI);
     }
 
     public void PlayButtonHandler() {
+        scoreScreen.SetActive(true);
         gm.StartGame();
     }
 
     public void ActivateGameOverUI() {
         gameOverUI.SetActive(true);
+        scoreScreen.SetActive(false);
 
         gameOverScoreUI.text = "Score: " + gm.Readable(gm.currentScore);
         gameOverHighScoreUI.text = "High: " + gm.Readable(gm.data.highScore);
