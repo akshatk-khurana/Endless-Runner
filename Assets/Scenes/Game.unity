@@ -216,7 +216,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 2082059417}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
@@ -228,7 +228,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &123942529
 MonoBehaviour:
@@ -617,7 +617,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1049978177}
+      - m_Target: {fileID: 2082059417}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -943,6 +943,7 @@ MonoBehaviour:
   - {fileID: 6923915989589594521, guid: 5a8889ca541d640a3b0f4ff0c2e44712, type: 3}
   - {fileID: 1788590942038763645, guid: 85ec1d64cde9e44b98eaf44e2fc0aba0, type: 3}
   - {fileID: 848143250942248862, guid: 52b76b6a2bcb245fcb84af99d2086034, type: 3}
+  obstacleParent: {fileID: 1270032585}
   obstacleSpawnTime: 1
   obstacleSpeed: 7
 --- !u!1 &941164757
@@ -1378,6 +1379,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1105286938}
   m_CullTransparentMesh: 1
+--- !u!1 &1270032584
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1270032585}
+  m_Layer: 0
+  m_Name: ObstacleParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1270032585
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1270032584}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 713.6824, y: 315.00784, z: -10.788734}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1311302011
 GameObject:
   m_ObjectHideFlags: 0
@@ -2379,3 +2411,4 @@ SceneRoots:
   - {fileID: 942914043}
   - {fileID: 430795267}
   - {fileID: 1472854132}
+  - {fileID: 1270032585}

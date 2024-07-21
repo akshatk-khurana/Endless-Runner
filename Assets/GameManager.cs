@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -15,10 +12,15 @@ public class GameManager : MonoBehaviour
 
     #endregion
 
-    public float currentScore= 0f;
+    public float currentScore = 0f;
+    public Data data;
     public bool isPlaying = false;
     public UnityEvent onPlay = new UnityEvent();
     public UnityEvent onGameOver = new UnityEvent();
+
+    private void Start() {
+        data = new Data();
+    }
     private void Update() {
         if (isPlaying) {
             currentScore += Time.deltaTime;
@@ -28,11 +30,14 @@ public class GameManager : MonoBehaviour
     public void StartGame() {
         onPlay.Invoke();
         isPlaying = true;
+        currentScore = 0;
     }
 
     public void GameOver() {
         onGameOver.Invoke();
-        currentScore = 0;
+        if (data.highScore < currentScore) {
+            data.highScore = currentScore;
+        }
         isPlaying = false;
     }
     public string PrettyScore() {
