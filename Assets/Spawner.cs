@@ -2,7 +2,9 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] private GameObject[] obstaclePrefabs;
+    [SerializeField] private GameObject[] lvlOnePrefabs;
+    [SerializeField] private GameObject[] lvlTwoPrefabs;
+    [SerializeField] private GameObject[] lvlThreePrefabs;
     [SerializeField] private Transform obstacleParent;
     public float obstacleSpawnTime = 2f;
     public float obstacleSpeed = 2f;
@@ -31,9 +33,20 @@ public class Spawner : MonoBehaviour
             Destroy(child.gameObject);
         }
     }
-
+    
     private void Spawn() {
-        GameObject obstacleToSpawn = obstaclePrefabs[Random.Range(0, obstaclePrefabs.Length)];
+        GameObject obstacleToSpawn;
+        float score = GameManager.Instance.currentScore;
+
+        if (score <= 20) {
+            obstacleToSpawn = lvlOnePrefabs[Random.Range(0, lvlOnePrefabs.Length)];
+        } else if (score > 20 && score <= 40) {
+            obstacleToSpawn = lvlTwoPrefabs[Random.Range(0, lvlTwoPrefabs.Length)];
+        } else {
+            obstacleToSpawn = lvlThreePrefabs[Random.Range(0, lvlThreePrefabs.Length)];
+        }
+
+        // Spawn code
         GameObject spawnedObstacle = Instantiate(obstacleToSpawn, transform.position, Quaternion.identity);
 
         spawnedObstacle.transform.parent = obstacleParent;

@@ -1112,10 +1112,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d90445abc91547679e13fc3037de67c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstaclePrefabs:
-  - {fileID: 6923915989589594521, guid: 5a8889ca541d640a3b0f4ff0c2e44712, type: 3}
+  lvlOnePrefabs:
   - {fileID: 1788590942038763645, guid: 85ec1d64cde9e44b98eaf44e2fc0aba0, type: 3}
-  - {fileID: 848143250942248862, guid: 52b76b6a2bcb245fcb84af99d2086034, type: 3}
+  - {fileID: 5926286115326588693, guid: 7d3406f7ecf4a4c4b9520d2a21b16882, type: 3}
+  lvlTwoPrefabs:
+  - {fileID: 1788590942038763645, guid: 85ec1d64cde9e44b98eaf44e2fc0aba0, type: 3}
+  - {fileID: 5926286115326588693, guid: 7d3406f7ecf4a4c4b9520d2a21b16882, type: 3}
+  - {fileID: 6923915989589594521, guid: 5a8889ca541d640a3b0f4ff0c2e44712, type: 3}
+  lvlThreePrefabs:
+  - {fileID: 1788590942038763645, guid: 85ec1d64cde9e44b98eaf44e2fc0aba0, type: 3}
+  - {fileID: 5926286115326588693, guid: 7d3406f7ecf4a4c4b9520d2a21b16882, type: 3}
+  - {fileID: 6923915989589594521, guid: 5a8889ca541d640a3b0f4ff0c2e44712, type: 3}
+  - {fileID: 5979075538596055472, guid: 89dcdc2ce542940049a24971c8670066, type: 3}
   obstacleParent: {fileID: 1270032585}
   obstacleSpawnTime: 1
   obstacleSpeed: 7
