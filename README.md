@@ -2,8 +2,8 @@
  This was a learning project to learn Unity UI and physics basics, hence it is a fairly simple game without any fancy character designs.
 
 # Usage
-To run this project on:
-- MacOS, click on the **Endless-Runenr.app** file.
+Download the latest release of the project and then, to run this project on:
+- MacOS, click on **Endless-Runner.app**.
 - Windows, run <code>start Endless Runner.exe</code>. 
 
 The controls are simple:
